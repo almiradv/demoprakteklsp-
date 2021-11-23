@@ -94,7 +94,7 @@ class arsipController extends Controller
   		  $files->getMimeType();
   		  $tujuan_upload = 'file';
   		  $files->move($tujuan_upload,$files->getClientOriginalName()); //<!--memindah tujuan file-->
-        $name_file = $files->getClientOriginalExtension();
+        $name_file = $files->getClientOriginalName();
       }
       else {
         $files = surat::with('file')->where('id',$request->id)->first(); //<!--cek data apakah file diperbarui atau tidak-->
